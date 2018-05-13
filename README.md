@@ -29,14 +29,16 @@ The ERC20 contract resides on shard3.
 ### Two-phase locking
 * Keep track of all shards that have been entered, these become part of the "serial" environment (if a cyclic call is made, it can thus be executed)
 * If a locked shard is encountered, revert state, unlock (to avoid deadlocks) and try again (after a timeout).
+https://ethresear.ch/t/cross-shard-contract-yanking/1450 
 
-
+See: https://ethresear.ch/t/cross-shard-locking-scheme-1/1269
+A shard "pulls" a contract's state, operates on it and then "pushes" the result.
+=> Here all referenced conracts would be "yanked" to the calling shard.
 
 ## Ethereum vm
 [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) 
 
 REVERT operation is difficult to implement
-See: https://ethresear.ch/t/cross-shard-locking-scheme-1/1269
 
 ### Opcodes
 Different operations can be found starting from [page 28](https://ethereum.github.io/yellowpaper/paper.pdf#page=28) of the yellow paper.
