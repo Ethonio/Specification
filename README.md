@@ -14,7 +14,7 @@ Alice's account is on shard 1.
 The exchange contract resides on shard 2.
 The ERC20 contract resides on shard3.
 
-1. Alice sends an execute atom to shard 1
+1. Alice sends an execute atom to shard 1 with some ether
 2. Shard 1 communicates this with shard 2 and blocks
   1. Shard 2 starts executing exchange contract
   2. Exchange contract runs CALLVALUE and receives a 1
@@ -25,6 +25,11 @@ The ERC20 contract resides on shard3.
     4. ERC20 returns
   4. Exchange contract unblocks
 3. Shard 1 updates balance, unblocks
+
+### Two-phase locking
+* Keep track of all shards that have been entered, these become part of the "serial" environment (if a cyclic call is made, it can thus be executed)
+* If a locked shard is encountered, revert state, unlock (to avoid deadlocks) and try again (after a timeout).
+
 
 
 ## Ethereum vm
