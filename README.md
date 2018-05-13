@@ -31,6 +31,7 @@ The ERC20 contract resides on shard3.
 [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) 
 
 REVERT operation is difficult to implement
+See: https://ethresear.ch/t/cross-shard-locking-scheme-1/1269
 
 ### Opcodes
 Different operations can be found starting from [page 28](https://ethereum.github.io/yellowpaper/paper.pdf#page=28) of the yellow paper.
