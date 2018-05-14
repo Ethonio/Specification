@@ -27,6 +27,8 @@ The ERC20 contract resides on shard3.
 3. Shard 1 updates balance, unblocks
 
 ### Two-phase locking
+Ethereum has a max stack depth of 1024 CALLs. Interesting talk on 
+
 * Keep track of all shards that have been entered, these become part of the "serial" environment (if a cyclic call is made, it can thus be executed)
 * If a locked shard is encountered, revert state, unlock (to avoid deadlocks) and try again (after a timeout).
 https://ethresear.ch/t/cross-shard-contract-yanking/1450 
