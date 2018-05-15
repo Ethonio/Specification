@@ -42,6 +42,8 @@ State roots are saved before the execution/locking, on revert, the state roots a
 
 ## Ethereum vm
 [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) 
+Off chain computation: TrueBit (works with challanging)
+
 ### Transactions
 Two types:
 * [__Contract creation__](https://ethereum.github.io/yellowpaper/paper.pdf#page=9) 
