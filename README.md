@@ -46,6 +46,19 @@ Off chain computation: TrueBit (works with challanging)
 
 [ewasm](https://github.com/ewasm) for vm?
 [primea](https://github.com/primea) for communication?
+### [Ewasm](https://github.com/ewasm/design) hm
+The ewasm spec could be used to inspire the contract environment.
+- [Contract interface](https://github.com/ewasm/design/blob/master/contract_interface.md)
+- [Ethereum-like interface](https://github.com/ewasm/design/blob/master/eth_interface.md): block stuff can be omitted
+
+Things that are interesting:
+- Webassembly metering injection
+- Evm transpilation (we could forward the transpilation to our own format)
+
+### [Primea](https://github.com/primea)
+[Ewasm interface mock](https://github.com/primea/wasm-test-interface/blob/master/EVMInterface.js)
+
+All though primea is quite simple, the proof of concept does not have to adhere to it. 
 
 ### Transactions
 Two types:
